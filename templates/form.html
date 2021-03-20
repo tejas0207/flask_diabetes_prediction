@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+        background: url("{{url_for('static', filename='ss.jpg')}}");
+        background-repeat: no-repeat;
+        background-size: cover;
+
+    }
+    .box{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        width: 400px;
+        background: #fff;
+        padding: 40px;
+        box-sizing: border-box;
+        border: 1px solid rgba(0,0,0,.1);
+        box-shadow: 0 5px 10px rgba(0,0,0,.2);
+    }
+    .box h2{
+        margin: 0 0 40px;
+        padding: 0;
+        color: skyblue;
+        
+    }
+    .box input{
+        padding: 10px 0;
+        margin-bottom: 20px;
+        width: 100%;
+        box-sizing: border-box;
+        box-shadow: none;
+        outline: none;
+        border: none;
+        border-bottom: 2px solid #999;
+    }
+    .box input[type="submit"]{
+        border-bottom: none;
+        cursor: pointer;
+        background: skyblue;
+        color: #fff;
+        margin-bottom: 0;
+        text-transform: uppercase;
+    }
+    .box form div{
+        position: relative;
+    }
+    .box form div label{
+        position: absolute;
+        top: 10px;
+        left: 0px;
+        pointer-events: none;
+        color: #999;
+        transition: .5s;
+    }
+    .box input:focus ~ label,
+    .box input:valid ~ label 
+    {
+        top: -12px;
+        left: 0;
+        color: skyblue;
+        font-size: 12px;
+        font-weight: bold;
+    }
+    
+    .box input:focus,
+    .box input:valid
+    {
+        border-bottom: 2px solid skyblue;
+    }
+
+</style>
+<body>
+    <div class="box">
+        <h2>Enter Details</h2>
+        <form action="/result" method="GET">
+           <div>
+               <input type="number" name="z1" required>
+               <label for="">Number of times pregnant</label>
+           </div>
+           <div>
+            <input type="number" name="z2" required>
+            <label for="">Plasma glucose concentration</label>
+        </div>
+        <div>
+            <input type="number" name="z3" required>
+            <label for="">Diastolic blood pressure</label>
+        </div>
+        <div>
+            <input type="number" name="z4" required>
+            <label for="">Triceps skin fold thickness</label>
+        </div>
+        <div>
+            <input type="number" name="z5" required>
+            <label for="">2-Hour serum Insulin</label>
+        </div>
+        <div>
+            <input type="number" name="z6" step=".001" required>
+            <label for="">Body Mass Index</label>
+        </div>
+        <div>
+            <input type="number" name="z7" step=".001" required>
+            <label for="">Diabetes pedigree function</label>
+        </div>
+        <div>
+            <input type="number" name="z8" required>
+            <label for="">Age</label>
+
+        </div> 
+        <input type="submit" name="" value="submit">
+        </form>
+    </div>
+</body>
+</html>
